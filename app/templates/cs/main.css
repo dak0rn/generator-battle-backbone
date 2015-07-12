@@ -1,0 +1,43 @@
+@import url(http://fonts.googleapis.com/css?family=Lato:400,700);
+
+body {
+	padding: 1em;
+
+	font-family: 'Lato', 'Helvetica Neue', 'Helvetica', 'Arial', sans-serif;
+}
+
+nav li {
+	float: left;
+	margin: 0;
+	padding: 0;
+}
+
+nav ul {
+	list-style-type: none;
+	padding: 0;
+	margin: 0;
+}
+
+nav a {
+	display: block;
+	padding: 0 0.5em;
+	text-decoration: none;
+	color: #444;
+}
+
+nav a:before {
+	content: "[";
+	color: #444;
+	padding-right: 0.3em;
+}
+
+nav a:after {
+	content: "]";
+	color: #444;
+	padding-left: 0.3em;
+}
+
+.clearfix {
+	clear: both;
+	float: none;
+}

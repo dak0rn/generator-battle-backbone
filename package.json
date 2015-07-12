@@ -1,0 +1,34 @@
+{
+  "name": "generator-battle-backbone",
+  "version": "1.0.0",
+  "description": "A yeoman generator for sophisticated large scale apps with Backbone and Marionette",
+  "main": "app/index.js",
+  "dependencies": {
+    "yeoman-generator": "^0.20.1"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "yeoman-generator": "^0.20.1"
+  }
+  "scripts": {
+    "test": "mocha"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dak0rn/generator-battle-backbone.git"
+  },
+  "keywords": [
+    "yeoman-generator",
+    "backbone",
+    "marionette",
+    "lodash",
+    "underscore",
+    "requirejs"
+  ],
+  "author": "Daniel Koch <daniel@suitsoft.eu>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/dak0rn/generator-battle-backbone/issues"
+  },
+  "homepage": "https://github.com/dak0rn/generator-battle-backbone#readme"
+}
