@@ -32,4 +32,4 @@ after the generator has finished to start a (live reload) web server.
 
 ## Docs
 
-You can find the documentation at https://github.com/dak0rn/generator-battle-backbone
+You can find the documentation at https://65535th.com/battle-backbone/
