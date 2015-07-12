@@ -9,7 +9,7 @@
   "devDependencies": {},
   "dependencies": {
     "yeoman-generator": "^0.20.1"
-  }
+  },
   "scripts": {
     "test": "mocha"
   },
