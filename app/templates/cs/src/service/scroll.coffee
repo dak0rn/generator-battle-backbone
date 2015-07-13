@@ -24,4 +24,4 @@ define ['App'], (App) ->
 		App.vent.reply 'scroll:offset', (offset, t) ->
 			scrollTo offset, t or time
 			
-		App.vent.on 'route:show', -> scrollTo 0
+		App.vent.on 'show:route', -> scrollTo 0

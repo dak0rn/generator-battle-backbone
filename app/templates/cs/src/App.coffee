@@ -61,7 +61,7 @@ define [
 				# Start the backbone history feature afterwards
 				servicesPromise.then =>
 					Backbone.history.start(config.routerOptions)
-					@vent.trigger "app:start" 
+					@vent.trigger "start:app" 
 				
 
 

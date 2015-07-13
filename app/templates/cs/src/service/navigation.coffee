@@ -250,7 +250,7 @@ define ['App'], (App) ->
 			handler = undefined
 			
 			if previous?
-				vent.trigger "route:destroy", routeInformation.route, routeInformation.sub, baseRoute, parts
+				vent.trigger "destroy:route", routeInformation.route, routeInformation.sub, baseRoute, parts
 				
 				# The destroy functions can return something
 				# They are passed the next route and sub route
@@ -302,7 +302,7 @@ define ['App'], (App) ->
 				p = module.ctrl.triggerMethod "show:#{module.event}", parts
 				
 				# Trigger a global event for other handlers
-				vent.trigger "route:show", baseRoute, parts
+				vent.trigger "show:route", baseRoute, parts
 
 				# If the controller returned a promise we use that
 				if p?.done?
