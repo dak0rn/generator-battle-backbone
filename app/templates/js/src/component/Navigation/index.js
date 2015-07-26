@@ -13,7 +13,7 @@ define([
 			view: null,
 
 			handlers: {
-				onShowNavigation: ['module/Navigation/view/Navigation']
+				onShowNavigation: ['component/Navigation/view/Navigation']
 			},
 
 			onShowNavigation: function() {
