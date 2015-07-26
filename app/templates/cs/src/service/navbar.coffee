@@ -8,7 +8,7 @@ define ['App'], (App) ->
 		# We wait for the start event
 		# All required services will be loaded then
 		App.vent.once 'start:app', ->
-			require ["module/Navigation/index"], ->
+			require ["component/Navigation/index"], ->
 				Controller = App.module('Navigation').Controller
 				ctrl = new Controller
 				ctrl.triggerMethod 'show:navigation'

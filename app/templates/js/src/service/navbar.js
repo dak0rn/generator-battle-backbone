@@ -8,7 +8,7 @@ define(['App'], function(App) {
 		// We wait for the start event
 		// All required services will be loaded then
 		App.vent.once('start:app', function() {
-			require(['module/Navigation/index'], function() {
+			require(['component/Navigation/index'], function() {
 				var ctrl = new (App.module('Navigation').Controller)();
 				ctrl.triggerMethod('show:navigation');
 			});
