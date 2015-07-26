@@ -26,7 +26,6 @@ var coreModules = [
 	'text',
 	'i18n',
 	
-	// The all t
 	'jquery',
 	'marionette',
 	'backbone',
@@ -52,7 +51,7 @@ var jsFileName = (function(){
  * array
  */
 var prependService = function(s) { return 'service/'+s; };
-var services = fs.readdirSync('build/service').map( jsFileName ).map( prependService );
+var services = fs.readdirSync('src/service').map( jsFileName ).map( prependService );
 
 coreModules = coreModules.concat( services );
 
@@ -107,25 +106,28 @@ var listIncludes = function(basePath) {
 	return mods;
 };
 
+var traceDependencies = function(prefix) {
+
+	return function(folder) {
+
+		console.log('Analyzing', folder);
+		folder = prefix + '/' + folder;
+
+		var m = listIncludes(folder);
+		
+		targetModules.push({
+			exclude: coreModules,
+			include: m,
+			name: folder + '/index'
+		});
+
+	};
+
+};
 
 process.chdir('build');
-fs.readdirSync('module').forEach( function(module) {
-	
-	console.log('Analyzing', module);
-	
-	module = 'module/'+module;
-	
-	// Find module's dependencies
-	var m = listIncludes(module);
-	
-	targetModules.push({
-		exclude: coreModules,
-		include: m,
-		name: module + '/index'
-	});
-	
-	
-});
+fs.readdirSync('module').forEach( traceDependencies('module') );
+fs.readdirSync('component').forEach( traceDependencies('component') );
 process.chdir('..');
 
 module.exports = {
@@ -153,7 +155,7 @@ module.exports = {
 	},
 	
 	// Source directory
-	appDir: './build',
+	appDir: './src',
 	
 	// Target directory
 	dir: './dist',
