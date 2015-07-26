@@ -6,12 +6,13 @@ var generators = require('yeoman-generator');
 module.exports = generators.Base.extend({
 
 	_language: null,
+	_examples: false,
 
 	prompting: function() {
 
 		var done = this.async();
 
-		this.prompt({
+		this.prompt([{
 			type: 'list',
 			name: 'lang',
 			message: 'What language do you to use',
@@ -25,9 +26,15 @@ module.exports = generators.Base.extend({
 				 	value: 'cs'
 				 }
 			]
-		}, function(answers) {
+		},
+		{
+			type: 'confirm',
+			name: 'examples',
+			message: 'Do you want to include the examples?'
+		}], function(answers) {
 
-			this._language = answers.lang;		
+			this._language = answers.lang;	
+			this._examples = answers.examples;	
 			done();	
 
 		}.bind(this));
@@ -36,6 +43,15 @@ module.exports = generators.Base.extend({
 
 	writing: function() {
 		this.directory(this._language, '.');
+
+		if( ! this._examples ) {
+			this.directory( this._language + '-base', '.' );
+		}
+		else {
+			this.directory( this._language + '-examples', '.' );
+		}
+
+		
 	},
 
 	install: function() {
